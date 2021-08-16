@@ -21,26 +21,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from cheeseburger device
 $(call inherit-product, device/oneplus/cheeseburger/device.mk)
 
-# Inherit some common aosp stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# All components inherited here go to product image
+#
+$(call inherit-product, vendor/hentai/build/product/hentai_product.mk)
 
-TARGET_GAPPS_ARCH := arm64
-TARGET_BOOT_ANIMATION_RES := 1080
-
-PRODUCT_NAME := aosp_cheeseburger
-PRODUCT_DEVICE := cheeseburger
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
+PRODUCT_NAME := hentai_cheeseburger
+PRODUCT_DEVICE := cheeseburger
 PRODUCT_MODEL := ONEPLUS A5000
-CUSTOM_DEVICE := OnePlus5
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
-
-TARGET_VENDOR_PRODUCT_NAME := OnePlus5
-TARGET_VENDOR_DEVICE_NAME := OnePlus5
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=OnePlus5 \
-    PRODUCT_NAME=OnePlus5
-
-TARGET_VENDOR := oneplus
